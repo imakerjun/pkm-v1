@@ -24,7 +24,7 @@
 | `/수집` | 인자의 URL·텍스트 (관련 자료 매칭 시 `.ai-wiki/index.md`) | `.inbox/{YYYY-MM-DD-HHMM}-{slug}.md`, `.ai-wiki/index.md` | `outbox/` |
 | `/일일회고` | `outbox/*.md` 전체 (**읽기 전용 — append-only 가드**) | `.ai-wiki/index.md`, 옵션으로 `.inbox/일일회고-{날짜}.md` 또는 `$SLACK_WEBHOOK_URL`로 슬랙 | `outbox/` 수정 |
 
-`outbox/`는 사용자가 직접 손으로 쓰는 자리다. generation effect가 거기서 일어나므로 **AI가 `outbox/` 본문을 채우는 건 안티패턴**이다. `/쓰기`는 6원칙 골격 + 사용자 의도 한 줄(placeholder)까지만 박는다. 본문은 사람이 채운다.
+`outbox/`는 사용자가 직접 손으로 쓰는 자리다. generation effect가 거기서 일어나므로 **AI가 `outbox/` 본문을 채우는 건 안티패턴**이다. `/쓰기`는 3원칙 골격 + 사용자 의도 한 줄(placeholder)까지만 박는다. 본문은 사람이 채운다.
 
 ## 인덱스의 두 가지 type
 
@@ -37,7 +37,7 @@
 
 ## 파일명 규칙
 
-- `outbox/` 파일: `{YYYY-MM-DD}-{키워드}.md`. 본문 첫 줄은 가장 강력한 주장이어야 한다 (Feynman 자기 점검). 6원칙은 [README.md § outbox 6원칙](README.md)에 있고, `/쓰기`가 골격을 만들 때 이 6원칙을 따른다.
+- `outbox/` 파일: `{YYYY-MM-DD}-{키워드}.md`. 본문 첫 줄은 가장 강력한 주장이어야 한다. 3원칙은 [README.md § outbox 3원칙](README.md)에 있고, `/쓰기`가 골격을 만들 때 이 3원칙을 따른다.
 - `.inbox/` 파일: `{YYYY-MM-DD-HHMM}-{slug}.md`. raw 본문은 인라인으로 **절대** 재작성·요약하지 않는다 — 한 줄 요약은 인덱스에만 들어간다.
 - 파일명 슬러그는 카테고리가 아니라 **인출 단서**다. 기억에서 슬러그가 떠오르지 않는다면 이름을 잘못 지은 것.
 
